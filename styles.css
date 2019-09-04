@@ -1,0 +1,91 @@
+.char {
+    border: 1px orange solid;
+    font-size: 15em;
+    margin: 20px 5px;
+    text-align: center;
+}
+
+.char:hover {
+    background: rgb(231, 192, 120);
+}
+
+.char:hover a {
+    background: rgb(231, 192, 120);
+    color: green !important;
+}
+
+.char a {
+    text-decoration: none;
+    display:inline-block;
+    width:100%;
+    height:100%;
+}
+
+.char-side {
+    text-align: center;
+}
+
+.main-char {
+    border: 1px solid olive;
+}
+
+.detail-char {
+    font-size: 18em;
+}
+
+.char-label {
+    font-size: 8em;
+}
+
+.part {
+    position: relative;
+    font-size: 12em;
+    border: 1px solid olive;
+    margin: 1px;
+}
+
+.part:hover {
+    background: wheat;
+    color: brown;
+}
+
+.inline {
+    display: inline-block;
+    width: 49%;
+}
+
+.required {
+    color: orangered !important;
+}
+
+.part .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    font-size: 30px !important;
+    background-color: lavender;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 104%;
+    left: 50%;
+    margin-left: -60px;
+  }
+
+  
+ .part .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent lavender transparent;
+  }
+
+  .part:hover .tooltiptext {
+    visibility: visible;
+  }
