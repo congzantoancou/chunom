@@ -77,6 +77,14 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 	</nav>
 	<div class="detail-main">
 		<div class="container">
+			<div class="char-info">
+				<p>Character:
+					<?php echo $char[0]['glyph'] ?> | Radical:
+					<?php echo $char[0]['radical'] ?>
+				</p>
+			</div>
+		</div>
+		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
 					<div class="char-side main-char">
