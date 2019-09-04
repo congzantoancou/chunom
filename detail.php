@@ -57,7 +57,7 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 				<div class="form-group">
 					<input name="keyword" type="text" class="form-control" placeholder="Search character">
 				</div>
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-default">Search</button>
 			</form>
 			<ul class="nav navbar-nav navbar-right">
 				<li>
