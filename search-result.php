@@ -1,13 +1,26 @@
 <?php
+include_once"config/database.php";
+spl_autoload_register(function($class_name){
+    require './app/models/'. $class_name .'.php';
+});
+$objCharacters = new Character();
 
-    include_once"config/database.php";
-    spl_autoload_register(function($class_name){
-        require './app/models/'. $class_name .'.php';
-    });
+if (isset($_GET['keyword']) && $_GET['keyword'] != '') {
+	$keyword = $_GET['keyword'];
+	$characters = $objCharacters->searchCharacter($keyword);
+	
+	if (!isset($characters[0]['glyph'])) {
+		echo "<script> location.href='notfound'; </script>";
+		exit;	
+	}
+	
+} else {
+    echo "<script> location.href='notfound'; </script>";
+    exit;
+}
 
-    $objCharacters = new Character();
-    $characters = $objCharacters->getAllItems();
 
+//var_dump($characters);
 
 ?>
 
@@ -18,13 +31,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Hán Tự</title>
+	<title>Search result</title>
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -63,24 +75,20 @@
 			</ul>
 		</div>
 	</nav>
-
-	<div class="main">
-		<div class="container">
-			<div class="row">
-				<?php foreach ($characters as $char) : ?>
-				<div class="col-md-4">
-					<div class="char">
-						<a href="detail?glyph=<?php echo $char['glyph'] ?>">
-							<?php echo $char['glyph'] ?>
-						</a>
-					</div>
+	<div class="container">
+		<div class="row">
+			<?php foreach ($characters as $char) : ?>
+			<div class="col-md-4">
+				<div class="char">
+					<a href="detail?glyph=<?php echo $char['glyph'] ?>">
+						<?php echo $char['glyph'] ?>
+					</a>
 				</div>
-				<?php endforeach ?>
 			</div>
+			<?php endforeach ?>
 		</div>
 	</div>
-	<footer>
-	</footer>
+
 </body>
 
 </html>

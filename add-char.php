@@ -29,7 +29,7 @@
 					<a href="#">Page 2</a>
 				</li>
 			</ul>
-			<form class="navbar-form navbar-left" action="detail.php">
+			<form class="navbar-form navbar-left" method="get" action="search-result.php">
 				<div class="form-group">
 					<input name="keyword" type="text" class="form-control" placeholder="Search character">
 				</div>
@@ -53,7 +53,7 @@
 	</nav>
 
 	<div class="container">
-		<form class="form-horizontal" method="post" action="result.php">
+		<form class="form-horizontal" method="post" action="add-result.php">
 			<div class="form-group">
 				<label class="control-label required col-sm-2" for="glyph">Glyph*:</label>
 				<div class="col-sm-10">

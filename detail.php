@@ -53,7 +53,7 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 					<a href="#">Page 2</a>
 				</li>
 			</ul>
-			<form class="navbar-form navbar-left" action="detail.php">
+			<form class="navbar-form navbar-left" method="get" action="search-result.php">
 				<div class="form-group">
 					<input name="keyword" type="text" class="form-control" placeholder="Search character">
 				</div>
