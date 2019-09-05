@@ -28,6 +28,9 @@ class Character extends Database
         if (!isset($item[0]['hanviet'])) {
             $item[0]['hanviet'] = "unknown";
         }
+        if (!isset($item[0]['radical'])) {
+            $item[0]['radical'] = "-";
+        }
         return $item;
     }
 

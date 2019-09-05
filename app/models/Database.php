@@ -27,8 +27,10 @@ class Database
 
 		// Xử lý kết quả trả về: chuyển object $data -> array $items
 		$items = array();
-		while ($item = $data->fetch_assoc()) { // Đọc từng dòng trong $data
-			$items[] = $item; // Gán từng dòng vào từng phần tử trong $items[]
+		if ($data) {
+			while ($item = $data->fetch_assoc()) { // Đọc từng dòng trong $data
+				$items[] = $item; // Gán từng dòng vào từng phần tử trong $items[]
+			}
 		}
 
 		return $items;

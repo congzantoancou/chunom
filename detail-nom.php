@@ -10,7 +10,7 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 	$char = $objCharacters->getItemByName($glyph);
 	
 	if (!isset($char[0]['glyph'])) {
-		echo "<script> location.href='notfound'; </script>";
+		echo "<script> location.href='notfound?message=wrong character'; </script>";
 		exit;	
 	}
 	
@@ -104,7 +104,7 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 						<?php if ($char[0]['layout'] == "") { ?>
 						<div class="layout">
 							<div class="part">
-								<?php echo $part = $char[0]['glyph'] ?>
+							<a href="detail-han?glyph=<?php echo $part = $char[0]['glyph'] ?>"><?php echo $part = $char[0]['glyph'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
@@ -116,14 +116,14 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 						<?php if ($char[0]['layout'] == "LR") { ?>
 						<div class="layout LR">
 							<div class="part inline left-part">
-								<?php echo $part = $char[0]['part1'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part1'] ?>"><?php echo $part = $char[0]['part1'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
 								</span>
 							</div>
 							<div class="part inline right-part">
-								<?php echo $part = $char[0]['part2'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part2'] ?>"><?php echo $part = $char[0]['part2'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
@@ -135,14 +135,14 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 						<?php if ($char[0]['layout'] == "TB") { ?>
 						<div class="layout TB">
 							<div class="part top-part">
-								<?php echo $part = $char[0]['part1'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part1'] ?>"><?php echo $part = $char[0]['part1'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
 								</span>
 							</div>
 							<div class="part bottom-part">
-								<?php echo $part = $char[0]['part2'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part2'] ?>"><?php echo $part = $char[0]['part2'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
@@ -154,14 +154,14 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 						<?php if ($char[0]['layout'] == "OI") { ?>
 						<div class="layout OI">
 							<div class="part out-part">
-								<?php echo $part = $char[0]['part1'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part1'] ?>"><?php echo $part = $char[0]['part1'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
 								</span>
 							</div>
 							<div class="part in-part">
-								<?php echo $part = $char[0]['part2'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part2'] ?>"><?php echo $part = $char[0]['part2'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
@@ -173,21 +173,21 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 						<?php if ($char[0]['layout'] == "LCR") { ?>
 						<div class="layout LCR">
 							<div class="part inline left-part">
-								<?php echo $part = $char[0]['part1'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part1'] ?>"><?php echo $part = $char[0]['part1'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
 								</span>
 							</div>
 							<div class="part inline center-part">
-								<?php echo $part = $char[0]['part2'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part2'] ?>"><?php echo $part = $char[0]['part2'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
 								</span>
 							</div>
 							<div class="part inline right-part">
-								<?php echo $part = $char[0]['part3'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part3'] ?>"><?php echo $part = $char[0]['part3'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
@@ -199,21 +199,21 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 						<?php if ($char[0]['layout'] == "TMB") { ?>
 						<div class="layout TMB">
 							<div class="part top-part">
-								<?php echo $part = $char[0]['part1'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part1'] ?>"><?php echo $part = $char[0]['part1'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
 								</span>
 							</div>
 							<div class="part middle-part">
-								<?php echo $part = $char[0]['part2'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part2'] ?>"><?php echo $part = $char[0]['part2'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
 								</span>
 							</div>
 							<div class="part bottom-part">
-								<?php echo $part = $char[0]['part3'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part3'] ?>"><?php echo $part = $char[0]['part3'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
@@ -225,7 +225,7 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 						<?php if ($char[0]['layout'] == "TLR") { ?>
 						<div class="layout TLR">
 							<div class="part top-part">
-								<?php echo $part = $char[0]['part1'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part1'] ?>"><?php echo $part = $char[0]['part1'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
@@ -233,14 +233,14 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 							</div>
 							<div>
 								<div class="part inline left-part ">
-									<?php echo $part = $char[0]['part2'] ?>
+									<a href="detail-han?glyph=<?php echo $part = $char[0]['part2'] ?>"><?php echo $part = $char[0]['part2'] ?></a>
 									<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 									<span class="tooltiptext">
 										<?php echo $charPronounce[0]['hanviet'] ?>
 									</span>
 								</div>
 								<div class="part inline right-part ">
-									<?php echo $part = $char[0]['part3'] ?>
+									<a href="detail-han?glyph=<?php echo $part = $char[0]['part3'] ?>"><?php echo $part = $char[0]['part3'] ?></a>
 									<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 									<span class="tooltiptext">
 										<?php echo $charPronounce[0]['hanviet'] ?>
@@ -254,14 +254,14 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 						<div class="layout LRB">
 							<div>
 								<div class="part inline left-part">
-									<?php echo $part = $char[0]['part1'] ?>
+									<a href="detail-han?glyph=<?php echo $part = $char[0]['part1'] ?>"><?php echo $part = $char[0]['part1'] ?></a>
 									<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 									<span class="tooltiptext">
 										<?php echo $charPronounce[0]['hanviet'] ?>
 									</span>
 								</div>
 								<div class="part inline right-part">
-									<?php echo $part = $char[0]['part2'] ?>
+									<a href="detail-han?glyph=<?php echo $part = $char[0]['part2'] ?>"><?php echo $part = $char[0]['part2'] ?></a>
 									<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 									<span class="tooltiptext">
 										<?php echo $charPronounce[0]['hanviet'] ?>
@@ -269,7 +269,7 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 								</div>
 							</div>
 							<div class="part bottom-part">
-								<?php echo $part = $char[0]['part3'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part3'] ?>"><?php echo $part = $char[0]['part3'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
@@ -282,14 +282,14 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 						<div class="layout TBR">
 							<div class="inline">
 								<div class="part top-part">
-									<?php echo $part = $char[0]['part1'] ?>
+									<a href="detail-han?glyph=<?php echo $part = $char[0]['part1'] ?>"><?php echo $part = $char[0]['part1'] ?></a>
 									<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 									<span class="tooltiptext">
 										<?php echo $charPronounce[0]['hanviet'] ?>
 									</span>
 								</div>
 								<div class="part bottom-part">
-									<?php echo $part = $char[0]['part2'] ?>
+									<a href="detail-han?glyph=<?php echo $part = $char[0]['part2'] ?>"><?php echo $part = $char[0]['part2'] ?></a>
 									<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 									<span class="tooltiptext">
 										<?php echo $charPronounce[0]['hanviet'] ?>
@@ -298,7 +298,7 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 							</div>
 
 							<div class="part inline right-part">
-								<?php echo $part = $char[0]['part3'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part3'] ?>"><?php echo $part = $char[0]['part3'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
@@ -310,7 +310,7 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 						<?php if ($char[0]['layout'] == "LTB") { ?>
 						<div class="layout LTB">
 							<div class="part inline left-part">
-								<?php echo $part = $char[0]['part1'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part1'] ?>"><?php echo $part = $char[0]['part1'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
@@ -318,14 +318,14 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 							</div>
 							<div class="inline">
 								<div class="part top-part">
-									<?php echo $part = $char[0]['part2'] ?>
+									<a href="detail-han?glyph=<?php echo $part = $char[0]['part2'] ?>"><?php echo $part = $char[0]['part2'] ?></a>
 									<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 									<span class="tooltiptext">
 										<?php echo $charPronounce[0]['hanviet'] ?>
 									</span>
 								</div>
 								<div class="part bottom-part">
-									<?php echo $part = $char[0]['part3'] ?>
+									<a href="detail-han?glyph=<?php echo $part = $char[0]['part3'] ?>"><?php echo $part = $char[0]['part3'] ?></a>
 									<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 									<span class="tooltiptext">
 										<?php echo $charPronounce[0]['hanviet'] ?>
@@ -339,7 +339,7 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 						<?php if ($char[0]['layout'] == "LTBR") { ?>
 						<div class="layout LTBR">
 							<div class="part inline left-part">
-								<?php echo $part = $char[0]['part1'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part1'] ?>"><?php echo $part = $char[0]['part1'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>
@@ -347,14 +347,14 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 							</div>
 							<div class="inline">
 								<div class="part top-part">
-									<?php echo $part = $char[0]['part2'] ?>
+									<a href="detail-han?glyph=<?php echo $part = $char[0]['part2'] ?>"><?php echo $part = $char[0]['part2'] ?></a>
 									<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 									<span class="tooltiptext">
 										<?php echo $charPronounce[0]['hanviet'] ?>
 									</span>
 								</div>
 								<div class="part bottom-part">
-									<?php echo $part = $char[0]['part3'] ?>
+									<a href="detail-han?glyph=<?php echo $part = $char[0]['part3'] ?>"><?php echo $part = $char[0]['part3'] ?></a>
 									<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 									<span class="tooltiptext">
 										<?php echo $charPronounce[0]['hanviet'] ?>
@@ -362,7 +362,7 @@ if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
 								</div>
 							</div>
 							<div class="part inline right-part">
-								<?php echo $part = $char[0]['part4'] ?>
+								<a href="detail-han?glyph=<?php echo $part = $char[0]['part4'] ?>"><?php echo $part = $char[0]['part4'] ?></a>
 								<?php $charPronounce = $objCharacters->getCharPronounce($part) ?>
 								<span class="tooltiptext">
 									<?php echo $charPronounce[0]['hanviet'] ?>

@@ -80,7 +80,7 @@ if (isset($_GET['keyword']) && $_GET['keyword'] != '') {
 			<?php foreach ($characters as $char) : ?>
 			<div class="col-md-4">
 				<div class="char">
-					<a href="detail?glyph=<?php echo $char['glyph'] ?>">
+					<a href="detail-nom?glyph=<?php echo $char['glyph'] ?>">
 						<?php echo $char['glyph'] ?>
 					</a>
 				</div>

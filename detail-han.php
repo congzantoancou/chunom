@@ -1,13 +1,26 @@
 <?php
+include_once"config/database.php";
+spl_autoload_register(function($class_name){
+    require './app/models/'. $class_name .'.php';
+});
+$objCharacters = new Character();
 
-    include_once"config/database.php";
-    spl_autoload_register(function($class_name){
-        require './app/models/'. $class_name .'.php';
-    });
+if (isset($_GET['glyph']) && $_GET['glyph'] != '') {
+	$glyph = $_GET['glyph'];
+	$char = $objCharacters->getCharPronounce($glyph);
+	
+	if (!isset($char[0]['glyph'])) {
+		echo "<script> location.href='notfound?message=wrong character'; </script>";
+		exit;	
+	}
+	
+} else {
+    echo "<script> location.href='notfound'; </script>";
+    exit;
+}
 
-    $objCharacters = new Character();
-    $characters = $objCharacters->getAllItems();
 
+//var_dump($char);
 
 ?>
 
@@ -18,13 +31,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Hán Tự</title>
+	<title>Detail</title>
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -63,24 +75,43 @@
 			</ul>
 		</div>
 	</nav>
-
-	<div class="main">
+	<div class="detail-main">
 		<div class="container">
 			<div class="row">
-				<?php foreach ($characters as $char) : ?>
-				<div class="col-md-4">
-					<div class="char">
-						<a href="detail-nom?glyph=<?php echo $char['glyph'] ?>">
-							<?php echo $char['glyph'] ?>
-						</a>
+				<div class="col-md-6">
+					<div class="char-side main-char">
+						<span class="detail-char">
+							<?php echo $char[0]['glyph'] ?>
+						</span>
+					</div>
+					
+				</div>
+
+				<div class="col-md-6">
+					<div class="char-description">
+						<h2>Detail information</h2>
+
+						<table>
+							<tr>
+								<th>Glyph</th>
+								<th>Radical</th>
+								<th>Hanviet</th>
+							</tr>
+							<tr>
+								<td><?php echo $char[0]['glyph'] ?></td>
+								<td><?php echo $char[0]['radical'] ?></td>
+								<td><?php echo $char[0]['hanviet'] ?></td>
+							</tr>
+							
+						</table>
 					</div>
 				</div>
-				<?php endforeach ?>
+
 			</div>
 		</div>
+
 	</div>
-	<footer>
-	</footer>
+
 </body>
 
 </html>
