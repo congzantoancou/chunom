@@ -92,6 +92,7 @@ table {
     /* this will break center height:100%; */
     text-align: center;
     vertical-align: middle;
+    line-height: 0%;
 }
 
 .part:hover a {
