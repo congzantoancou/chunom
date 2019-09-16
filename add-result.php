@@ -14,7 +14,15 @@ if (isset($_POST['glyph'])) {
     );
 
 
-    $query = $objCharacters->addItem($_POST['glyph'],$_POST['radical'],$_POST['pronounce'],$_POST['layout'],$optional);
+    $query = $objCharacters->addItem(
+        $_POST['glyph'],
+        $_POST['radical'],
+        $_POST['pronounce'],
+        $_POST['classify'],
+        $_POST['phonetic'],
+        $_POST['semantic'],
+        $_POST['layout'],
+        $optional);
 
 }
 

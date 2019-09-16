@@ -34,7 +34,7 @@ class Character extends Database
         return $item;
     }
 
-    public function addItem($glyph,$radical,$pronounce,$layout="",$optional)
+    public function addItem($glyph,$radical,$pronounce,$classify,$phonetic,$semantic,$layout="",$optional)
     {
         if(isset($optional['part4'])) {
             $part1 = $optional['part1'];
@@ -52,9 +52,12 @@ class Character extends Database
             $part1 = $optional['part1'];      
         }
 
-        $query = parent::$connection->prepare('INSERT INTO characters(glyph,radical,pronounce,layout,part1,part2,part3,part4)
-        VALUE (?,?,?,?,?,?,?,?)');
-        $query->bind_param('ssssssss', $glyph,$radical,$pronounce,$layout,$part1,$part2,$part3,$part4);
+        $query = parent::$connection->prepare('INSERT INTO characters(
+            glyph,radical,pronounce,classify,phonetic,semantic,
+            layout,part1,part2,part3,part4)
+        VALUE (?,?,?,?,?,?,?,?,?,?,?)');
+        $query->bind_param('sssssssssss', $glyph,$radical,$pronounce,$classify,$phonetic,$semantic,
+        $layout,$part1,$part2,$part3,$part4);
         return $query->execute();
     }
 }

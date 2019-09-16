@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Detail</title>
+	<title>Add character</title>
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="styles.css">
 </head>
@@ -73,6 +73,24 @@
 				<div class="col-sm-10">
 					<input type="text" class="form-control" name="pronounce" id="pronounce"
 					placeholder="Enter pronounce" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="classify">Classify:</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control"name="classify" id="classify" placeholder="Enter classify">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="phonetic">Phonetic:</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control"name="phonetic" id="phonetic" placeholder="Enter phonetic">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="semantic">Semantic:</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control"name="semantic" id="semantic" placeholder="Enter semantic">
 				</div>
 			</div>
 			<div class="form-group">
